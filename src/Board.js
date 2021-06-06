@@ -8,7 +8,7 @@ export const Board = (props) => {
 
   //define an object that returns the location in the grid of each value
   let locations = {}
-  for (var i = 0; i < grid.length; i++) {
+  for (let i = 0; i < grid.length; i++) {
     locations[grid[i]] = i
   }
 
@@ -26,7 +26,7 @@ export const Board = (props) => {
     let rowNumber = Math.floor(nullLocation / GRID_SIZE)
 
     //find all values in the same column and row as null
-    for (var i = 0; i < grid.length; i++) {
+    for (let i = 0; i < grid.length; i++) {
       //we don't need the null cell
       if (grid[i] === null) {
         continue
@@ -86,7 +86,7 @@ export const Board = (props) => {
     if (clickedCell < nullCell) {
       let toShift = grid.slice(clickedCell, nullCell)
       gridCopy[clickedCell] = null
-      for (var i = 0; i < toShift.length; i++) {
+      for (let i = 0; i < toShift.length; i++) {
         gridCopy[clickedCell + i + 1] = toShift[i]
       }
       setGrid(gridCopy)
@@ -95,7 +95,7 @@ export const Board = (props) => {
     else {
       let toShift = grid.slice(nullCell + 1, clickedCell + 1)
       gridCopy[clickedCell] = null
-      for (var i = 0; i < toShift.length; i++) {
+      for (let i = 0; i < toShift.length; i++) {
         gridCopy[nullCell + i] = toShift[i]
       }
       setGrid(gridCopy)
@@ -108,21 +108,21 @@ export const Board = (props) => {
     let toShift = []
     //shift cells down
     if (clickedCell < nullCell) {
-      for (var i = clickedCell; i < nullCell; i += 4) {
+      for (let i = clickedCell; i < nullCell; i += 4) {
         toShift.push(grid[i])
       }
       gridCopy[clickedCell] = null
-      for (var i = 0; i < toShift.length; i++) {
+      for (let i = 0; i < toShift.length; i++) {
         gridCopy[clickedCell + ((i + 1) * 4)] = toShift[i]
       }
     }
     //shift cells up
     else {
-      for (var i = clickedCell; i > nullCell; i -= 4) {
+      for (let i = clickedCell; i > nullCell; i -= 4) {
         toShift.push(grid[i])
       }
       gridCopy[clickedCell] = null
-      for (var i = 0; i < toShift.length; i++) {
+      for (let i = 0; i < toShift.length; i++) {
         gridCopy[clickedCell - ((i + 1) * 4)] = toShift[i]
       }
 
