@@ -36,3 +36,47 @@
     transform: rotate(360deg);
   }
 }
+
+.board-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  width: 25rem;
+  height: 25rem;
+}
+
+.cell {
+  border: 1px solid black;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+}
+
+.cell:hover {
+  border: 5px solid red;
+  cursor: pointer;
+}
+
+.moves-counter {
+  text-align: center;
+  margin: 1rem;
+  font-size: 20px;
+}
+
+.instructions {
+  text-align: center;
+  margin: auto;
+  font-size: 20px;
+  max-width: 500px;
+}
+
+p {
+  white-space: pre-wrap;
+}
