@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Board } from './Board'
 
 const winningResults = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
@@ -6,7 +6,7 @@ const winningResults = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 export const Game = (props) => {
   
   const { grid: initGrid } = props
-  
+
   const [grid, setGrid] = useState(initGrid)
 
   const [numMoves, setNumMoves] = useState(0)

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Cell } from './Cell'
 
 const GRID_SIZE = 4
